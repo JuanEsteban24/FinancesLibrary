@@ -1,0 +1,6 @@
+create table if not exists accounts(
+id integer primary key AUTOINCREMENT,
+accountOwner text not NULL,
+accountSolde real not NULL
+);
+select "succesfully created!" as message;
