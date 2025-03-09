@@ -3,7 +3,7 @@ POST http://localhost:3000/comptes
 Content-Type: application/json
 
 {
-  "nom": "compte1"
+  "nom": "Juan"
 }
 
 # Recuperar todas las cuentas
