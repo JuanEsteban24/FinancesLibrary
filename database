@@ -1,8 +1,18 @@
-create table if not exists accounts (
-    id integer primary key AUTOINCREMENT,
-    accountOwner text not NULL,
-    accountSolde real not NULL
+-- Créer la table des comptes
+CREATE TABLE IF NOT EXISTS accounts (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  accountOwner TEXT UNIQUE NOT NULL,
+  accountSolde REAL DEFAULT 0
 );
 
-select "successfully created!" as message;
-SELECT name FROM sqlite_master WHERE type='table';
+-- Créer la table des transactions
+CREATE TABLE IF NOT EXISTS transactions (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  montant REAL NOT NULL,
+  from_account TEXT NOT NULL,
+  to_account TEXT NOT NULL,
+  date TEXT NOT NULL,
+  comment TEXT,
+  FOREIGN KEY (from_account) REFERENCES accounts(accountOwner),
+  FOREIGN KEY (to_account) REFERENCES accounts(accountOwner)
+);

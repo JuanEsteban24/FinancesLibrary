@@ -1,13 +1,34 @@
-# Crear una cuenta
+### Test de création de compte
 POST http://localhost:3000/comptes
 Content-Type: application/json
 
 {
-  "nom": "Juan"
+  "nom": "CompteA"
 }
 
-# Recuperar todas las cuentas
+POST http://localhost:3000/comptes
+Content-Type: application/json
+
+{
+  "nom": "CompteB"
+}
+
+### Test de récupération de comptes
 GET http://localhost:3000/comptes
 
-# Borrar todas las cuentas (reset)
-DELETE http://localhost:3000/reset
+### Test de création de transaction
+POST http://localhost:3000/transactions
+Content-Type: application/json
+
+{
+  "montant": 100,
+  "from_account": "CompteA",
+  "to_account": "CompteB",
+  "date": "2025-03-09",
+  "comment": "Transaction test"
+}
+
+### Test de récupération des transactions
+GET http://localhost:3000/transactions
+
+### Test de mis
