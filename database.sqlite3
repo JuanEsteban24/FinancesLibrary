@@ -5,3 +5,4 @@ create table if not exists accounts (
 );
 
 select "successfully created!" as message;
+SELECT name FROM sqlite_master WHERE type='table';
