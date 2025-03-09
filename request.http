@@ -1,0 +1,13 @@
+# Crear una cuenta
+POST http://localhost:3000/comptes
+Content-Type: application/json
+
+{
+  "nom": "compte1"
+}
+
+# Recuperar todas las cuentas
+GET http://localhost:3000/comptes
+
+# Borrar todas las cuentas (reset)
+DELETE http://localhost:3000/reset

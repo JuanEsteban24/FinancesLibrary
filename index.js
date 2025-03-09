@@ -5,8 +5,9 @@ const app = express();
 const db = knex({
   client: 'sqlite3',
   connection: {
-    filename: './database.sqlite', 
-  }
+    filename: './database', 
+  },
+  useNullAsDefault: true
 });  
 
 app.use(express.json());
